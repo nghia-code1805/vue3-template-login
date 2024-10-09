@@ -16,7 +16,17 @@ const useUserStore = defineStore('user', {
 
     isUserName: (state) => {
       return state.user?.username;
+    },
+
+    isRoles: (state) => {
+      const role = state.user?.roles;
+      if (!role)
+        return false
+      if (role.toString() === "nghiantr")
+        return false
+      return state.user?.roles;
     }
+    
   },
   actions: {
     async login(credentials: UserCredentials) {

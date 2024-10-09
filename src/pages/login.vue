@@ -6,8 +6,8 @@ const username = ref('')
 const password = ref('')
 
 userStore.$subscribe(() => {
-  if (userStore.isAuthenticated)
-    router.push({ name: 'index' })
+  if (userStore.isAuthenticated && userStore.isRoles)
+    router.push({ path: '/test/homeTest' })
 })
 </script>
 
@@ -39,7 +39,6 @@ userStore.$subscribe(() => {
     >
       {{ $t('actions.sign-in') }}
     </button>
-    <a>{{ userStore.access_Token }}</a>
     <span v-if="userStore.error">{{ userStore.error }}</span>
   </div>
 </template>
