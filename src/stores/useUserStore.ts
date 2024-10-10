@@ -17,20 +17,12 @@ const useUserStore = defineStore('user', {
     isUserName: (state) => {
       return state.user?.username;
     },
-
-    isRoles: (state) => {
-      const role = state.user?.roles;
-      if (!role)
-        return false
-      if (role.toString() === "nghiantr")
-        return false
-      return state.user?.roles;
-    }
     
   },
   actions: {
     async login(credentials: UserCredentials) {
       const { data, error, isLoading } = useRequest('/auth/signin', { data: credentials, method: 'POST' }, { immediate: true })
+      console.log(data)
 
       watch(data, (value) => {
         this.$patch({
@@ -42,7 +34,6 @@ const useUserStore = defineStore('user', {
           }
         })
       })
-      
 
       watch(isLoading, (value) => {
         if (!value && !error) {

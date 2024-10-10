@@ -8,7 +8,7 @@ export const install: UserModule = ({ isClient, router }) => {
 
   router.beforeEach((to) => {
     if (to.name === 'login' && userStore.isAuthenticated) {
-      router.push({ path: '/test/homeTest' })
+      router.push({ name: 'test-ProjectList' })
     }
     if ((to.name !== 'login') && !userStore.isAuthenticated) {
       router.push({ name: 'login' })

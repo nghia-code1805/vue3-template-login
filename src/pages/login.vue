@@ -6,8 +6,8 @@ const username = ref('')
 const password = ref('')
 
 userStore.$subscribe(() => {
-  if (userStore.isAuthenticated && userStore.isRoles)
-    router.push({ path: '/test/homeTest' })
+  if (userStore.isAuthenticated)
+    router.push({ name: 'test-ProjectList' })
 })
 </script>
 

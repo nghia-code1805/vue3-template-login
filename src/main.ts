@@ -4,7 +4,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import type { UserModule } from '~/types'
 import App from '~/App.vue'
 import generatedRoutes from '~pages'
-
+import 'bootstrap/dist/css/bootstrap.css'
 import '@unocss/reset/tailwind.css'
 import './styles/main.scss'
 import 'uno.css'
