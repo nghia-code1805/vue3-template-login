@@ -11,6 +11,7 @@
     "up": "taze major -I"
   },
   "dependencies": {
+    "@cypress/vue": "^6.0.1",
     "@vueuse/core": "^9.7.0",
     "@vueuse/head": "^1.0.22",
     "@vueuse/integrations": "^9.7.0",
